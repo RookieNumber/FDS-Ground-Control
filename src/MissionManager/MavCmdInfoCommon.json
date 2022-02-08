@@ -295,7 +295,7 @@
                 "units":            "secs",
                 "default":          0,
                 "decimalPlaces":    0
-            }        
+            }
         },
         { "id": 83, "rawName": "MAV_CMD_NAV_ALTITUDE_WAIT", "friendlyName": "Altitude wait" },
         {
@@ -887,7 +887,7 @@
             "category":             "Camera",
             "param1": {
                 "label":            "Distance",
-                "default":          25,
+                "default":          0,
                 "units":            "m",
                 "decimalPlaces":    2
             },
@@ -899,7 +899,7 @@
             },
             "param3": {
                 "label":            "Trigger",
-                "default":          25,
+                "default":          0,
                 "enumStrings":      "No Trigger,Once Immediately",
                 "enumValues":       "0,1",
                 "default":          0,

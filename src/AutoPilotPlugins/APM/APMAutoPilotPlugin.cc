@@ -72,35 +72,35 @@ const QVariantList& APMAutoPilotPlugin::vehicleComponents(void)
 {
     if (_components.count() == 0 && !_incorrectParameterVersion) {
         if (_vehicle->parameterManager()->parametersReady()) {
-            _airframeComponent = new APMAirframeComponent(_vehicle, this);
-            _airframeComponent->setupTriggerSignals();
-            _components.append(QVariant::fromValue((VehicleComponent*)_airframeComponent));
+//            _airframeComponent = new APMAirframeComponent(_vehicle, this);
+//            _airframeComponent->setupTriggerSignals();
+//            _components.append(QVariant::fromValue((VehicleComponent*)_airframeComponent));
 
             if ( _vehicle->supportsRadio() ) {
-                _radioComponent = new APMRadioComponent(_vehicle, this);
-                _radioComponent->setupTriggerSignals();
-                _components.append(QVariant::fromValue((VehicleComponent*)_radioComponent));
+//                _radioComponent = new APMRadioComponent(_vehicle, this);
+//                _radioComponent->setupTriggerSignals();
+//                _components.append(QVariant::fromValue((VehicleComponent*)_radioComponent));
             }
 
             // No flight modes component for Sub versions 3.5 and up
             if (!_vehicle->sub() || (_vehicle->versionCompare(3, 5, 0) < 0)) {
-                _flightModesComponent = new APMFlightModesComponent(_vehicle, this);
-                _flightModesComponent->setupTriggerSignals();
-                _components.append(QVariant::fromValue((VehicleComponent*)_flightModesComponent));
+//                _flightModesComponent = new APMFlightModesComponent(_vehicle, this);
+//                _flightModesComponent->setupTriggerSignals();
+//                _components.append(QVariant::fromValue((VehicleComponent*)_flightModesComponent));
             }
 
-            _sensorsComponent = new APMSensorsComponent(_vehicle, this);
-            _sensorsComponent->setupTriggerSignals();
-            _components.append(QVariant::fromValue((VehicleComponent*)_sensorsComponent));
+//            _sensorsComponent = new APMSensorsComponent(_vehicle, this);
+//            _sensorsComponent->setupTriggerSignals();
+//            _components.append(QVariant::fromValue((VehicleComponent*)_sensorsComponent));
 
             _powerComponent = new APMPowerComponent(_vehicle, this);
             _powerComponent->setupTriggerSignals();
             _components.append(QVariant::fromValue((VehicleComponent*)_powerComponent));
 
             if (!_vehicle->sub() || (_vehicle->sub() && _vehicle->versionCompare(3, 5, 3) >= 0)) {
-                _motorComponent = new APMMotorComponent(_vehicle, this);
-                _motorComponent->setupTriggerSignals();
-                _components.append(QVariant::fromValue((VehicleComponent*)_motorComponent));
+//                _motorComponent = new APMMotorComponent(_vehicle, this);
+//                _motorComponent->setupTriggerSignals();
+//                _components.append(QVariant::fromValue((VehicleComponent*)_motorComponent));
             }
 
             _safetyComponent = new APMSafetyComponent(_vehicle, this);
@@ -124,9 +124,9 @@ const QVariantList& APMAutoPilotPlugin::vehicleComponents(void)
                 _components.append(QVariant::fromValue((VehicleComponent*)_heliComponent));
             }
 
-            _tuningComponent = new APMTuningComponent(_vehicle, this);
-            _tuningComponent->setupTriggerSignals();
-            _components.append(QVariant::fromValue((VehicleComponent*)_tuningComponent));
+//            _tuningComponent = new APMTuningComponent(_vehicle, this);
+//            _tuningComponent->setupTriggerSignals();
+//            _components.append(QVariant::fromValue((VehicleComponent*)_tuningComponent));
 
             if(_vehicle->parameterManager()->parameterExists(-1, "MNT_RC_IN_PAN")) {
                 _cameraComponent = new APMCameraComponent(_vehicle, this);
