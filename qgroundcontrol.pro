@@ -49,7 +49,7 @@ LinuxBuild {
 }
 
 WindowsBuild {
-    RC_ICONS = resources/icons/qgroundcontrol.ico
+    RC_ICONS = resources/icons/fdsico.ico
     CONFIG += resources_big
 }
 
