@@ -1019,8 +1019,13 @@ Item {
         } // Column
     }
 
+
+
+
+
     Component {
         id: syncDropPanel
+
 
         ColumnLayout {
             id:         columnHolder
@@ -1041,9 +1046,11 @@ Item {
             SectionHeader {
                 id:                 createSection
                 Layout.fillWidth:   true
-                text:               qsTr("Create Plan")
+                text:               qsTr("Misi Terbang")
                 showSpacer:         false
             }
+
+
 
             GridLayout {
                 columns:            4
@@ -1106,8 +1113,13 @@ Item {
                             }
                         }
                     }
+
+
                 }
             }
+
+
+
 
             SectionHeader {
                 id:                 storageSection
@@ -1236,6 +1248,29 @@ Item {
                     }
                 }
             }
+
+            SectionHeader {
+                id: disClaimer
+                Layout.fillWidth: true
+                text: qsTr("Panduan")
+            }
+
+            RowLayout {
+                Layout.fillWidth:   true
+                spacing:            _margin
+                visible:            vehicleSection.visible
+
+                QGCButton {
+                    text: qsTr ("Panduan")
+
+                    Layout.fillWidth:   true
+                    Layout.columnSpan:  2
+                    enabled:            !_planMasterController.syncInProgress
+
+
+                }
+            }
         }
     }
+
 }
