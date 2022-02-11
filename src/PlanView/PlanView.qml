@@ -1260,12 +1260,33 @@ Item {
                 spacing:            _margin
                 visible:            vehicleSection.visible
 
-                QGCButton {
+                Button {
                     text: qsTr ("Panduan")
 
                     Layout.fillWidth:   true
                     Layout.columnSpan:  2
-                    enabled:            !_planMasterController.syncInProgress
+
+                    onClicked: panduanMisi.open()
+                }
+
+
+                Dialog {
+                    id: panduanMisi
+                    title: "Panduan Pembuatan Misi"
+                    width: 700
+                    height: 800
+
+
+                    ScrollView {
+                            width: 550
+                            height: 750
+                            clip: true
+
+                            Label {
+                                text: "hey"
+
+                            }
+                    }
 
 
                 }
