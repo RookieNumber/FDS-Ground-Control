@@ -19,6 +19,9 @@ import MAVLink                              1.0
 
 //-------------------------------------------------------------------------
 //-- Battery Indicator
+
+
+
 Item {
     id:             _root
     anchors.top:    parent.top
@@ -44,6 +47,8 @@ Item {
 
                 property var battery: object
             }
+
+
         }
     }
     MouseArea {
@@ -52,6 +57,10 @@ Item {
             mainWindow.showIndicatorPopup(_root, batteryPopup)
         }
     }
+
+
+
+
 
     Component {
         id: batteryVisual
@@ -77,18 +86,33 @@ Item {
             }
 
             function getBatteryPercentageText() {
-                if (!isNaN(battery.percentRemaining.rawValue)) {
+                if (!isNaN(battery.mahConsumed.rawValue)) {
+                    return battery.mahConsumed.valueString + battery.mahConsumed.units + qsTr("  ")
+                }  else if (!isNaN(battery.percentRemaining.rawValue)) {
                     if (battery.percentRemaining.rawValue > 98.9) {
                         return qsTr("100%")
                     } else {
                         return battery.percentRemaining.valueString + battery.percentRemaining.units
                     }
-                } else if (!isNaN(battery.voltage.rawValue)) {
-                    return battery.voltage.valueString + battery.voltage.units
-                } else if (battery.chargeState.rawValue !== MAVLink.MAV_BATTERY_CHARGE_STATE_UNDEFINED) {
+                }
+                else if (battery.chargeState.rawValue !== MAVLink.MAV_BATTERY_CHARGE_STATE_UNDEFINED) {
                     return battery.chargeState.enumStringValue
                 }
                 return ""
+            }
+
+
+
+
+
+            function imageOption() {
+                if (battery.id.rawValue === 0) {
+                    return '/qmlimages/Battery.svg';
+                } else if (battery.id.rawValue === 1) {
+                    return '/qmlimages/Test.svg';
+                } else if (battery.id.rawValue === 2) {
+                    return '/qmlimages/VehicleSummaryIcon.png';
+                }
             }
 
             QGCColoredImage {
@@ -96,7 +120,7 @@ Item {
                 anchors.bottom:     parent.bottom
                 width:              height
                 sourceSize.width:   width
-                source:             "/qmlimages/Battery.svg"
+                source:             imageOption()
                 fillMode:           Image.PreserveAspectFit
                 color:              getBatteryColor()
             }
@@ -165,7 +189,15 @@ Item {
                                     property var battery: object
                                 }
 
-                                QGCLabel { text: qsTr("Battery %1").arg(object.id.rawValue) }
+                                QGCLabel { text: {
+                                    if (object.id.rawValue === 0) {
+                                        return qsTr("Baterai Utama")
+                                    } else if (object.id.rawValue === 1) {
+                                        return qsTr("Sprayer")
+                                    } else if (object.id.rawValue === 2) {
+                                        return qsTr("Whatever the fuck is this")
+                                    }
+                                } }
                                 QGCLabel { text: qsTr("Charge State");                          visible: batteryValuesAvailable.chargeStateAvailable }
                                 QGCLabel { text: qsTr("Remaining");                             visible: batteryValuesAvailable.timeRemainingAvailable }
                                 QGCLabel { text: qsTr("Remaining") }

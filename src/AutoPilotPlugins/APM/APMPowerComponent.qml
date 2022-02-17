@@ -295,7 +295,7 @@ SetupPage {
             property real _fieldWidth:      ScreenTools.defaultFontPixelWidth * 25
 
             GridLayout {
-                columns:        3
+                columns:        2
                 rowSpacing:     _margins
                 columnSpacing:  _margins
 
@@ -312,6 +312,17 @@ SetupPage {
                     fact:   battCapacity
                     visible:   !_showAdvanced
                 }
+
+                QGCLabel {
+
+
+                   Layout.columnSpan:  2
+                   Layout.fillWidth:  true
+                   font.pointSize:     ScreenTools.smallFontPointSize
+                   wrapMode:           Text.WordWrap
+                   text:               qsTr("If the battery voltage reported by the vehicle is largely different than the voltage read externally using a voltmeter you can adjust the voltage multiplier value to correct this. Click the Calculate button for help with calculating a new value.")
+                   visible:            !_showAdvanced
+               }
             }
 
         }
@@ -391,7 +402,7 @@ SetupPage {
 
 
             GridLayout {
-                columns:        3
+                columns:        2
                 rowSpacing:     _margins
                 columnSpacing:  _margins
 
@@ -424,11 +435,13 @@ SetupPage {
                 }
 
 
-                 QGCLabel {
-                    Layout.row: 2
 
-                    Layout.columnSpan:  3
-                    Layout.fillWidth:   true
+
+                 QGCLabel {
+
+
+                    Layout.columnSpan:  2
+                    Layout.fillWidth:  true
                     font.pointSize:     ScreenTools.smallFontPointSize
                     wrapMode:           Text.WordWrap
                     text:               qsTr("If the battery voltage reported by the vehicle is largely different than the voltage read externally using a voltmeter you can adjust the voltage multiplier value to correct this. Click the Calculate button for help with calculating a new value.")
@@ -452,6 +465,17 @@ SetupPage {
                     fact:   armVoltMin
                     visible:   !_showAdvanced
                 }
+
+                QGCLabel {
+
+
+                   Layout.columnSpan:  2
+                   Layout.fillWidth:  true
+                   font.pointSize:     ScreenTools.smallFontPointSize
+                   wrapMode:           Text.WordWrap
+                   text:               qsTr("If the battery voltage reported by the vehicle is largely different than the voltage read externally using a voltmeter you can adjust the voltage multiplier value to correct this. Click the Calculate button for help with calculating a new value.")
+                   visible:            !_showAdvanced
+               }
 
 //                QGCLabel {
 //                    Layout.row:     3
