@@ -815,6 +815,7 @@ Item {
                     Component.onCompleted: currentIndex = 0
                     QGCTabButton {
                         text:       qsTr("Mission")
+
                     }
 //                    QGCTabButton {
 //                        text:       qsTr("Fence")
@@ -939,7 +940,7 @@ Item {
         id: syncLoadFromVehicleOverwrite
         QGCViewMessage {
             id:         syncLoadFromVehicleCheck
-            message:   qsTr("You have unsaved/unsent changes. Loading from the Vehicle will lose these changes. Are you sure you want to load from the Vehicle?")
+            message:   qsTr("Mengunduh dari drone akan menghilangkan perubahan yang belum tersimpan, anda yakin ingin melanjutkan?")
             function accept() {
                 hideDialog()
                 _planMasterController.loadFromVehicle()
@@ -951,7 +952,7 @@ Item {
         id: syncLoadFromFileOverwrite
         QGCViewMessage {
             id:         syncLoadFromVehicleCheck
-            message:   qsTr("You have unsaved/unsent changes. Loading from a file will lose these changes. Are you sure you want to load from a file?")
+            message:   qsTr("Mengambil dari file akan menghilangkan perubahan yang belum tersimpan, anda yakin ingin melanjutkan?")
             function accept() {
                 hideDialog()
                 _planMasterController.loadFromSelectedFile()
@@ -964,7 +965,7 @@ Item {
     Component {
         id: createPlanRemoveAllPromptDialog
         QGCViewMessage {
-            message: qsTr("Are you sure you want to remove current plan and create a new plan? ")
+            message: qsTr("Anda yakin ingin menghapus misi saat ini dan membuat misi baru?")
             function accept() {
                 createPlanRemoveAllPromptDialogPlanCreator.createPlan(createPlanRemoveAllPromptDialogMapCenter)
                 hideDialog()
@@ -975,7 +976,7 @@ Item {
     Component {
         id: clearVehicleMissionDialog
         QGCViewMessage {
-            message: qsTr("Are you sure you want to remove all mission items and clear the mission from the vehicle?")
+            message: qsTr("Anda yakin ingin menghapus seluruh misi dan mengosongkan misi pada drone?")
             function accept() {
                 _planMasterController.removeAllFromVehicle()
                 _missionController.setCurrentPlanViewSeqNum(0, true)
@@ -1038,15 +1039,15 @@ Item {
                 Layout.fillWidth:   true
                 wrapMode:           Text.WordWrap
                 text:               globals.activeVehicle ?
-                                        qsTr("You have unsaved changes. You should upload to your vehicle, or save to a file.") :
-                                        qsTr("You have unsaved changes.")
+                                        qsTr("Anda memiliki perubahan yang belum tersimpan, segera unduh atau simpan.") :
+                                        qsTr("Anda memiliki perubahan yang belum tersimpan.")
                 visible:            _planMasterController.dirty
             }
 
             SectionHeader {
                 id:                 createSection
                 Layout.fillWidth:   true
-                text:               qsTr("Misi Terbang")
+                text:               qsTr("Pilihan Misi")
                 showSpacer:         false
             }
 
@@ -1100,7 +1101,7 @@ Item {
                                 if (_planMasterController.containsItems) {
                                     createPlanRemoveAllPromptDialogMapCenter = _mapCenter()
                                     createPlanRemoveAllPromptDialogPlanCreator = object
-                                    mainWindow.showComponentDialog(createPlanRemoveAllPromptDialog, qsTr("Create Plan"), mainWindow.showDialogDefaultWidth, StandardButton.Yes | StandardButton.No)
+                                    mainWindow.showComponentDialog(createPlanRemoveAllPromptDialog, qsTr("Buat misi baru?"), mainWindow.showDialogDefaultWidth, StandardButton.Yes | StandardButton.No)
                                 } else {
                                     object.createPlan(_mapCenter())
                                 }
@@ -1124,7 +1125,7 @@ Item {
             SectionHeader {
                 id:                 storageSection
                 Layout.fillWidth:   true
-                text:               qsTr("Storage")
+                text:               qsTr("Komputer")
             }
 
             GridLayout {
@@ -1145,7 +1146,7 @@ Item {
                 }*/
 
                 QGCButton {
-                    text:               qsTr("Open...")
+                    text:               qsTr("Buka...")
                     Layout.fillWidth:   true
                     enabled:            !_planMasterController.syncInProgress
                     onClicked: {
@@ -1159,7 +1160,7 @@ Item {
                 }
 
                 QGCButton {
-                    text:               qsTr("Save")
+                    text:               qsTr("Simpan")
                     Layout.fillWidth:   true
                     enabled:            !_planMasterController.syncInProgress && _planMasterController.currentPlanFile !== ""
                     onClicked: {
@@ -1173,7 +1174,7 @@ Item {
                 }
 
                 QGCButton {
-                    text:               qsTr("Save As...")
+                    text:               qsTr("Simpan sebagai...")
                     Layout.fillWidth:   true
                     enabled:            !_planMasterController.syncInProgress && _planMasterController.containsItems
                     onClicked: {
@@ -1185,7 +1186,7 @@ Item {
                 QGCButton {
                     Layout.columnSpan:  3
                     Layout.fillWidth:   true
-                    text:               qsTr("Save Mission Waypoints As KML...")
+                    text:               qsTr("Simpan waypoint sebagai KML...")
                     enabled:            !_planMasterController.syncInProgress && _visualItems.count > 1
                     onClicked: {
                         // First point does not count
@@ -1202,7 +1203,7 @@ Item {
             SectionHeader {
                 id:                 vehicleSection
                 Layout.fillWidth:   true
-                text:               qsTr("Vehicle")
+                text:               qsTr("Drone")
             }
 
             RowLayout {
@@ -1237,7 +1238,7 @@ Item {
                 }
 
                 QGCButton {
-                    text:               qsTr("Clear")
+                    text:               qsTr("Bersihkan")
                     Layout.fillWidth:   true
                     Layout.columnSpan:  2
                     enabled:            !_planMasterController.offline && !_planMasterController.syncInProgress
