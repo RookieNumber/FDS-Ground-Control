@@ -338,21 +338,21 @@ SetupPage {
             property bool _showAdvanced:    sensorCombo.currentIndex === sensorModel.count - 1
             property real _fieldWidth:      ScreenTools.defaultFontPixelWidth * 25
 
-            Component.onCompleted: calcSensor()
+//            Component.onCompleted: calcSensor()
 
-            function calcSensor() {
-                for (var i=0; i<sensorModel.count - 1; i++) {
-                    if (sensorModel.get(i).voltPin == battVoltPin.value &&
-                            sensorModel.get(i).currPin == battCurrPin.value &&
-                            Math.abs(sensorModel.get(i).voltMult - battVoltMult.value) < 0.001 &&
-                            Math.abs(sensorModel.get(i).ampPerVolt - battAmpPerVolt.value) < 0.0001 &&
-                            Math.abs(sensorModel.get(i).ampOffset - battAmpOffset.value) < 0.0001) {
-                        sensorCombo.currentIndex = i
-                        return
-                    }
-                }
-                sensorCombo.currentIndex = sensorModel.count - 1
-            }
+//            function calcSensor() {
+//                for (var i=0; i<sensorModel.count - 1; i++) {
+//                    if (sensorModel.get(i).voltPin == battVoltPin.value &&
+//                            sensorModel.get(i).currPin == battCurrPin.value &&
+//                            Math.abs(sensorModel.get(i).voltMult - battVoltMult.value) < 0.001 &&
+//                            Math.abs(sensorModel.get(i).ampPerVolt - battAmpPerVolt.value) < 0.0001 &&
+//                            Math.abs(sensorModel.get(i).ampOffset - battAmpOffset.value) < 0.0001) {
+//                        sensorCombo.currentIndex = i
+//                        return
+//                    }
+//                }
+//                sensorCombo.currentIndex = sensorModel.count - 1
+//            }
 
             QGCPalette { id: palette; colorGroupEnabled: true }
 
