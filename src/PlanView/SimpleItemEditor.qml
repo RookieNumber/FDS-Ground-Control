@@ -74,10 +74,6 @@ Rectangle {
 
             QGCLabel {
                 text:               qsTr("Pindahkan 'T' ke lokasi yang diinginkan.")
-                .arg(_controllerVehicle.vtol ? qsTr("T") : qsTr("T"))
-                .arg(_controllerVehicle.vtol ? qsTr("Transition Direction") : qsTr("Takeoff"))
-                .arg(_controllerVehicle.vtol ? qsTr("desired") : qsTr("climbout"))
-                .arg(_controllerVehicle.vtol ? (qsTr("Ensure distance from launch to transition direction is far enough to complete transition.")) : "")
                 Layout.fillWidth:   true
                 wrapMode:           Text.WordWrap
                 visible:            !initialClickLabel.visible
@@ -154,7 +150,7 @@ Rectangle {
 
                         QGCLabel {
                             Layout.alignment:   Qt.AlignBaseline
-                            text:               qsTr("Altitude")
+                            text:               qsTr("Ketinggian")
                             font.pointSize:     ScreenTools.smallFontPointSize
                         }
                         QGCLabel {
@@ -240,7 +236,7 @@ Rectangle {
 
                 QGCCheckBox {
                     id:         flightSpeedCheckbox
-                    text:       qsTr("Flight Speed")
+                    text:       qsTr("Kecepatan")
                     checked:    missionItem.speedSection.specifyFlightSpeed
                     onClicked:  missionItem.speedSection.specifyFlightSpeed = checked
                     visible:    missionItem.speedSection.available
@@ -277,10 +273,10 @@ Rectangle {
                 }
             }
 
-            CameraSection {
-                checked:    missionItem.cameraSection.settingsSpecified
-                visible:    missionItem.cameraSection.available
-            }
+//            CameraSection {
+//                checked:    missionItem.cameraSection.settingsSpecified
+//                visible:    missionItem.cameraSection.available
+//            }
         }
     }
 }

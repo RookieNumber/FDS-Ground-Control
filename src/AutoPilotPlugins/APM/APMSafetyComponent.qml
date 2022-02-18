@@ -76,21 +76,21 @@ SetupPage {
                         columnSpacing:  _margins
                         rowSpacing:     _margins
                         columns:        2
-                        QGCLabel { text: qsTr("Low action:") }
+                        QGCLabel { text: qsTr("Tindakan saat Daya Rendah:") }
                         FactComboBox {
                             fact:               failsafeBattLowAct
                             indexModel:         false
                             Layout.fillWidth:   true
                         }
 
-                        QGCLabel { text: qsTr("Critical action:") }
+                        QGCLabel { text: qsTr("Tindakan saat Daya Kritis:") }
                         FactComboBox {
                             fact:               failsafeBattCritAct
                             indexModel:         false
                             Layout.fillWidth:   true
                         }
 
-                        QGCLabel { text: qsTr("Low voltage threshold:") }
+                        QGCLabel { text: qsTr("Batas Voltase Rendah:") }
                         FactTextField {
                             fact:               failsafeBattLowVoltage
                             showUnits:          true
@@ -98,21 +98,21 @@ SetupPage {
                         }
 
 
-                        QGCLabel { text: qsTr("Critical voltage threshold:") }
+                        QGCLabel { text: qsTr("Batas Voltase Kritis:") }
                         FactTextField {
                             fact:               failsafeBattCritVoltage
                             showUnits:          true
                             Layout.fillWidth:   true
                         }
 
-                        QGCLabel { text: qsTr("Low mAh threshold:") }
+                        QGCLabel { text: qsTr("Batas Kapasitas Rendah:") }
                         FactTextField {
                             fact:               failsafeBattLowMah
                             showUnits:          true
                             Layout.fillWidth:   true
                         }
 
-                        QGCLabel { text: qsTr("Critical mAh threshold:") }
+                        QGCLabel { text: qsTr("Batas Kapasitas Kritis:") }
                         FactTextField {
                             fact:               failsafeBattCritMah
                             showUnits:          true
@@ -133,7 +133,7 @@ SetupPage {
                     }
 
                     QGCButton {
-                        text:       qsTr("Reboot vehicle")
+                        text:       qsTr("Restart Drone")
                         onClicked:  controller.vehicle.rebootVehicle()
                     }
                 }
@@ -144,7 +144,7 @@ SetupPage {
                 visible: _batt1MonitorEnabled
 
                 QGCLabel {
-                    text:       qsTr("Battery1 Failsafe Triggers")
+                    text:       qsTr("Pemicu Kegagalan pada Baterai")
                     font.family: ScreenTools.demiboldFontFamily
                 }
 
@@ -173,38 +173,38 @@ SetupPage {
             } // Column - Battery Failsafe Settings
 
 
-            Column {
-                spacing: _margins / 2
-                visible: _batt2MonitorEnabled
+//            Column {
+//                spacing: _margins / 2
+//                visible: _batt2MonitorEnabled
 
-                QGCLabel {
-                    text:       qsTr("Battery2 Failsafe Triggers")
-                    font.family: ScreenTools.demiboldFontFamily
-                }
+//                QGCLabel {
+//                    text:       qsTr("Battery2 Failsafe Triggers")
+//                    font.family: ScreenTools.demiboldFontFamily
+//                }
 
-                Rectangle {
-                    width:  battery2FailsafeLoader.x + battery2FailsafeLoader.width + _margins
-                    height: battery2FailsafeLoader.y + battery2FailsafeLoader.height + _margins
-                    color:  ggcPal.windowShade
+//                Rectangle {
+//                    width:  battery2FailsafeLoader.x + battery2FailsafeLoader.width + _margins
+//                    height: battery2FailsafeLoader.y + battery2FailsafeLoader.height + _margins
+//                    color:  ggcPal.windowShade
 
-                    Loader {
-                        id:                 battery2FailsafeLoader
-                        anchors.margins:    _margins
-                        anchors.top:        parent.top
-                        anchors.left:       parent.left
-                        sourceComponent:    _batt2ParamsAvailable ? batteryFailsafeComponent : restartRequiredComponent
+//                    Loader {
+//                        id:                 battery2FailsafeLoader
+//                        anchors.margins:    _margins
+//                        anchors.top:        parent.top
+//                        anchors.left:       parent.left
+//                        sourceComponent:    _batt2ParamsAvailable ? batteryFailsafeComponent : restartRequiredComponent
 
-                        property Fact battMonitor:              _batt2Monitor
-                        property bool battParamsAvailable:      _batt2ParamsAvailable
-                        property Fact failsafeBattLowAct:       _failsafeBatt2LowAct
-                        property Fact failsafeBattCritAct:      _failsafeBatt2CritAct
-                        property Fact failsafeBattLowMah:       _failsafeBatt2LowMah
-                        property Fact failsafeBattCritMah:      _failsafeBatt2CritMah
-                        property Fact failsafeBattLowVoltage:   _failsafeBatt2LowVoltage
-                        property Fact failsafeBattCritVoltage:  _failsafeBatt2CritVoltage
-                    }
-                } // Rectangle
-            } // Column - Battery Failsafe Settings
+//                        property Fact battMonitor:              _batt2Monitor
+//                        property bool battParamsAvailable:      _batt2ParamsAvailable
+//                        property Fact failsafeBattLowAct:       _failsafeBatt2LowAct
+//                        property Fact failsafeBattCritAct:      _failsafeBatt2CritAct
+//                        property Fact failsafeBattLowMah:       _failsafeBatt2LowMah
+//                        property Fact failsafeBattCritMah:      _failsafeBatt2CritMah
+//                        property Fact failsafeBattLowVoltage:   _failsafeBatt2LowVoltage
+//                        property Fact failsafeBattCritVoltage:  _failsafeBatt2CritVoltage
+//                    }
+//                } // Rectangle
+//            } // Column - Battery Failsafe Settings
 
             Component {
                 id: planeGeneralFS
@@ -392,9 +392,9 @@ SetupPage {
                 } // Column - General Failsafe Settings
             }
 
-            Loader {
-                sourceComponent: controller.vehicle.multiRotor ? copterGeneralFS : undefined
-            }
+//            Loader {
+//                sourceComponent: controller.vehicle.multiRotor ? copterGeneralFS : undefined
+//            }
 
             Component {
                 id: copterGeoFence
@@ -529,9 +529,9 @@ SetupPage {
                 } // Column - GeoFence Settings
             }
 
-            Loader {
-                sourceComponent: controller.vehicle.multiRotor ? copterGeoFence : undefined
-            }
+//            Loader {
+//                sourceComponent: controller.vehicle.multiRotor ? copterGeoFence : undefined
+//            }
 
             Component {
                 id: copterRTL
@@ -546,7 +546,7 @@ SetupPage {
 
                     QGCLabel {
                         id:             rtlLabel
-                        text:           qsTr("Return to Launch")
+                        text:           qsTr("Kembali ke titik Take-off")
                         font.family:    ScreenTools.demiboldFontFamily
                     }
 
@@ -582,7 +582,7 @@ SetupPage {
                             anchors.margins:    _innerMargin
                             anchors.left:       _showIcon ? icon.right : parent.left
                             anchors.top:        parent.top
-                            text:               qsTr("Return at current altitude")
+                            text:               qsTr("Kembali dengan ketinggian saat ini")
                             checked:            _rtlAltFact.value == 0
 
                             onClicked: _rtlAltFact.value = 0
@@ -593,7 +593,7 @@ SetupPage {
                             anchors.topMargin:  _innerMargin
                             anchors.top:        returnAtCurrentRadio.bottom
                             anchors.left:       returnAtCurrentRadio.left
-                            text:               qsTr("Return at specified altitude:")
+                            text:               qsTr("Kembali dengan ketinggian yang diatur:")
                             checked:            _rtlAltFact.value != 0
 
                             onClicked: _rtlAltFact.value = 1500
@@ -614,7 +614,7 @@ SetupPage {
                             anchors.left:       returnAtCurrentRadio.left
                             anchors.baseline:   landDelayField.baseline
                             checked:            _rtlLoitTimeFact.value > 0
-                            text:               qsTr("Loiter above Home for:")
+                            text:               qsTr("Loiter diatas titik Take-off:")
 
                             onClicked: _rtlLoitTimeFact.value = (checked ? 60 : 0)
                         }
@@ -632,7 +632,7 @@ SetupPage {
                         QGCLabel {
                             anchors.left:       returnAtCurrentRadio.left
                             anchors.baseline:   rltAltFinalField.baseline
-                            text:               qsTr("Final land stage altitude:")
+                            text:               qsTr("Ketinggian terakhir sebelum Landing:")
                         }
 
                         FactTextField {
@@ -647,7 +647,7 @@ SetupPage {
                         QGCLabel {
                             anchors.left:       returnAtCurrentRadio.left
                             anchors.baseline:   landSpeedField.baseline
-                            text:               qsTr("Final land stage descent speed:")
+                            text:               qsTr("Kecepatan Turun:")
                         }
 
                         FactTextField {

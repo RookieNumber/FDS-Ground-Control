@@ -320,7 +320,7 @@ SetupPage {
                    Layout.fillWidth:  true
                    font.pointSize:     ScreenTools.smallFontPointSize
                    wrapMode:           Text.WordWrap
-                   text:               qsTr("If the battery voltage reported by the vehicle is largely different than the voltage read externally using a voltmeter you can adjust the voltage multiplier value to correct this. Click the Calculate button for help with calculating a new value.")
+                   text:               qsTr("Dengan mengisi nilai Volume Tangki diatas maka nilai cairan yang terpakai akan dihitung dan ditampilkan di Jendela Penerbangan.")
                    visible:            !_showAdvanced
                }
             }
@@ -444,7 +444,7 @@ SetupPage {
                     Layout.fillWidth:  true
                     font.pointSize:     ScreenTools.smallFontPointSize
                     wrapMode:           Text.WordWrap
-                    text:               qsTr("If the battery voltage reported by the vehicle is largely different than the voltage read externally using a voltmeter you can adjust the voltage multiplier value to correct this. Click the Calculate button for help with calculating a new value.")
+                    text:               qsTr("Bagian ini mengatur kecepatan aliran yang dihasilkan oleh pompa.")
                     visible:            !_showAdvanced
                 }
 
@@ -473,7 +473,7 @@ SetupPage {
                    Layout.fillWidth:  true
                    font.pointSize:     ScreenTools.smallFontPointSize
                    wrapMode:           Text.WordWrap
-                   text:               qsTr("If the battery voltage reported by the vehicle is largely different than the voltage read externally using a voltmeter you can adjust the voltage multiplier value to correct this. Click the Calculate button for help with calculating a new value.")
+                   text:               qsTr("Kecepatan aliran minimum yang akan dihasilkan oleh pompa.")
                    visible:            !_showAdvanced
                }
 
