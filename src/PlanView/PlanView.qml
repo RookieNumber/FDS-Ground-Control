@@ -1039,7 +1039,7 @@ Item {
                 Layout.fillWidth:   true
                 wrapMode:           Text.WordWrap
                 text:               globals.activeVehicle ?
-                                        qsTr("Anda memiliki perubahan yang belum tersimpan, segera unduh atau simpan.") :
+                                        qsTr("Anda memiliki perubahan yang belum tersimpan, segera unggah atau simpan.") :
                                         qsTr("Anda memiliki perubahan yang belum tersimpan.")
                 visible:            _planMasterController.dirty
             }
