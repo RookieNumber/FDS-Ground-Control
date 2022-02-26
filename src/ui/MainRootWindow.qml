@@ -267,8 +267,8 @@ ApplicationWindow {
 
     MessageDialog {
         id:                 unsavedMissionCloseDialog
-        title:              qsTr("%1 close").arg(QGroundControl.appName)
-        text:               qsTr("You have a mission edit in progress which has not been saved/sent. If you close you will lose changes. Are you sure you want to close?")
+        title:              qsTr("%1").arg(QGroundControl.appName)
+        text:               qsTr("Anda memiliki misi yang belum selesai/disimpan. Jika anda tutup, anda akan kehilangan progres, yakin masih ingin menutupnya?")
         standardButtons:    StandardButton.Yes | StandardButton.No
         modality:           Qt.ApplicationModal
         visible:            false
@@ -284,8 +284,8 @@ ApplicationWindow {
 
     MessageDialog {
         id:                 pendingParameterWritesCloseDialog
-        title:              qsTr("%1 close").arg(QGroundControl.appName)
-        text:               qsTr("You have pending parameter updates to a vehicle. If you close you will lose changes. Are you sure you want to close?")
+        title:              qsTr("%1").arg(QGroundControl.appName)
+        text:               qsTr("Anda memiliki update parameter yang terjeda. Jika anda tutup, anda akan kehilangan progres, yakin masih ingin menutupnya?")
         standardButtons:    StandardButton.Yes | StandardButton.No
         modality:           Qt.ApplicationModal
         visible:            false
@@ -303,8 +303,8 @@ ApplicationWindow {
 
     MessageDialog {
         id:                 activeConnectionsCloseDialog
-        title:              qsTr("%1 close").arg(QGroundControl.appName)
-        text:               qsTr("There are still active connections to vehicles. Are you sure you want to exit?")
+        title:              qsTr("%1").arg(QGroundControl.appName)
+        text:               qsTr("Masih ada drone yang terhubung, anda yakin ingin menutupnya?")
         standardButtons:    StandardButton.Yes | StandardButton.Cancel
         modality:           Qt.ApplicationModal
         visible:            false

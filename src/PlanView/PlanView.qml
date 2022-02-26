@@ -137,7 +137,7 @@ Item {
     Component {
         id: promptForPlanUsageOnVehicleChangePopupComponent
         QGCPopupDialog {
-            title:      _planMasterController.managerVehicle.isOfflineEditingVehicle ? qsTr("Plan View - Vehicle Disconnected") : qsTr("Plan View - Vehicle Changed")
+            title:      _planMasterController.managerVehicle.isOfflineEditingVehicle ? qsTr("Jendela Misi - Drone Terputus") : qsTr("Jendela Misi - Drone telah diganti")
             buttons:    StandardButton.NoButton
 
             ColumnLayout {
@@ -145,17 +145,17 @@ Item {
                     Layout.maximumWidth:    parent.width
                     wrapMode:               QGCLabel.WordWrap
                     text:                   _planMasterController.managerVehicle.isOfflineEditingVehicle ?
-                                                qsTr("The vehicle associated with the plan in the Plan View is no longer available. What would you like to do with that plan?") :
-                                                qsTr("The plan being worked on in the Plan View is not from the current vehicle. What would you like to do with that plan?")
+                                                qsTr("Drone yang terasosiasi dengan misi ini sudah tidak terhubung, apa yang ingin anda lakukan dengan misi ini??") :
+                                                qsTr("Misi yang sedang dikerjakan bukan berasal dari drone yang sedang terhubung, apa yang ingin anda lakukan dengan misi ini?")
                 }
 
                 QGCButton {
                     Layout.fillWidth:   true
                     text:               _planMasterController.dirty ?
                                             (_planMasterController.managerVehicle.isOfflineEditingVehicle ?
-                                                 qsTr("Discard Unsaved Changes") :
-                                                 qsTr("Discard Unsaved Changes, Load New Plan From Vehicle")) :
-                                            qsTr("Load New Plan From Vehicle")
+                                                 qsTr("Buang perubahan yang tak tersimpan") :
+                                                 qsTr("Buang perubahan yang tak tersimpan, Ambil misi baru dari Drone")) :
+                                            qsTr("Ambil misi baru dari Drone")
                     onClicked: {
                         _planMasterController.showPlanFromManagerVehicle()
                         _promptForPlanUsageShowing = false

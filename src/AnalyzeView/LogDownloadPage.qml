@@ -21,7 +21,7 @@ import QGroundControl.ScreenTools   1.0
 AnalyzePage {
     id:                 logDownloadPage
     pageComponent:      pageComponent
-    pageDescription:    qsTr("Log Download allows you to download binary log files from your vehicle. Click Refresh to get list of available logs.")
+    pageDescription:    qsTr("Halaman ini digunakan untuk mendownload file binary log dari dalam drone, log binary menunjukan data history terbang.")
 
     property real _margin:          ScreenTools.defaultFontPixelWidth
     property real _butttonWidth:    ScreenTools.defaultFontPixelWidth * 10
@@ -69,7 +69,7 @@ AnalyzePage {
                 }
 
                 TableViewColumn {
-                    title: qsTr("Date")
+                    title: qsTr("Tanggal")
                     width: ScreenTools.defaultFontPixelWidth * 34
                     horizontalAlignment: Text.AlignHCenter
                     delegate: Text  {
@@ -80,7 +80,7 @@ AnalyzePage {
                                 if(logController.model.get(styleData.row).received) {
                                     var d = logController.model.get(styleData.row).time
                                     if(d.getUTCFullYear() < 2010)
-                                        return qsTr("Date Unknown")
+                                        return qsTr("Tanggal tidak diketahui")
                                     else
                                         return d.toLocaleString()
                                 }
@@ -91,7 +91,7 @@ AnalyzePage {
                 }
 
                 TableViewColumn {
-                    title: qsTr("Size")
+                    title: qsTr("Ukuran")
                     width: ScreenTools.defaultFontPixelWidth * 18
                     horizontalAlignment: Text.AlignHCenter
                     delegate : Text  {
@@ -167,7 +167,7 @@ AnalyzePage {
                 }
                 QGCButton {
                     enabled:    !logController.requestingList && !logController.downloadingLogs && logController.model.count > 0
-                    text:       qsTr("Erase All")
+                    text:       qsTr("Hapus Semua")
                     width:      _butttonWidth
                     onClicked:  mainWindow.showComponentDialog(
                         eraseAllMessage,
@@ -186,7 +186,7 @@ AnalyzePage {
                     }
                 }
                 QGCButton {
-                    text:       qsTr("Cancel")
+                    text:       qsTr("Urungkan")
                     width:      _butttonWidth
                     enabled:    logController.requestingList || logController.downloadingLogs
                     onClicked:  logController.cancel()
