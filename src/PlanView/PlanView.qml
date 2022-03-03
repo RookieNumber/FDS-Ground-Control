@@ -166,8 +166,8 @@ Item {
                 QGCButton {
                     Layout.fillWidth:   true
                     text:               _planMasterController.managerVehicle.isOfflineEditingVehicle ?
-                                            qsTr("Keep Current Plan") :
-                                            qsTr("Keep Current Plan, Don't Update From Vehicle")
+                                            qsTr("Simpan misi saat ini") :
+                                            qsTr("Simpan misi saat ini, Jangan download dari drone")
                     onClicked: {
                         if (!_planMasterController.managerVehicle.isOfflineEditingVehicle) {
                             _planMasterController.dirty = true
@@ -814,7 +814,7 @@ Item {
                     visible:    (!planControlColapsed || !_airspaceEnabled) && QGroundControl.corePlugin.options.enablePlanViewSelector
                     Component.onCompleted: currentIndex = 0
                     QGCTabButton {
-                        text:       qsTr("Mission")
+                        text:       qsTr("Misi Spraying")
 
                     }
 //                    QGCTabButton {
@@ -940,7 +940,7 @@ Item {
         id: syncLoadFromVehicleOverwrite
         QGCViewMessage {
             id:         syncLoadFromVehicleCheck
-            message:   qsTr("Mengunduh dari drone akan menghilangkan perubahan yang belum tersimpan, anda yakin ingin melanjutkan?")
+            message:   qsTr("Mendownload data dari drone akan menghilangkan perubahan yang belum tersimpan, anda yakin ingin melanjutkan?")
             function accept() {
                 hideDialog()
                 _planMasterController.loadFromVehicle()
@@ -1039,7 +1039,7 @@ Item {
                 Layout.fillWidth:   true
                 wrapMode:           Text.WordWrap
                 text:               globals.activeVehicle ?
-                                        qsTr("Anda memiliki perubahan yang belum tersimpan, segera unggah atau simpan.") :
+                                        qsTr("Anda memiliki perubahan yang belum tersimpan, segera upload atau simpan.") :
                                         qsTr("Anda memiliki perubahan yang belum tersimpan.")
                 visible:            _planMasterController.dirty
             }
@@ -1250,48 +1250,48 @@ Item {
                 }
             }
 
-            SectionHeader {
-                id: disClaimer
-                Layout.fillWidth: true
-                text: qsTr("Panduan")
-            }
+//            SectionHeader {
+//                id: disClaimer
+//                Layout.fillWidth: true
+//                text: qsTr("Panduan")
+//            }
 
-            RowLayout {
-                Layout.fillWidth:   true
-                spacing:            _margin
-                visible:            vehicleSection.visible
+//            RowLayout {
+//                Layout.fillWidth:   true
+//                spacing:            _margin
+//                visible:            vehicleSection.visible
 
-                Button {
-                    text: qsTr ("Panduan")
+//                Button {
+//                    text: qsTr ("Panduan")
 
-                    Layout.fillWidth:   true
-                    Layout.columnSpan:  2
+//                    Layout.fillWidth:   true
+//                    Layout.columnSpan:  2
 
-                    onClicked: panduanMisi.open()
-                }
-
-
-                Dialog {
-                    id: panduanMisi
-                    title: "Panduan Pembuatan Misi"
-                    width: 700
-                    height: 800
+//                    onClicked: panduanMisi.open()
+//                }
 
 
-                    ScrollView {
-                            width: 550
-                            height: 750
-                            clip: true
-
-                            Label {
-                                text: "hey"
-
-                            }
-                    }
+//                Dialog {
+//                    id: panduanMisi
+//                    title: "Panduan Pembuatan Misi"
+//                    width: 700
+//                    height: 800
 
 
-                }
-            }
+//                    ScrollView {
+//                            width: 550
+//                            height: 750
+//                            clip: true
+
+//                            Label {
+//                                text: "hey"
+
+//                            }
+//                    }
+
+
+//                }
+//            }
         }
     }
 

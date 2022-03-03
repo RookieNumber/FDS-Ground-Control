@@ -132,7 +132,7 @@ QGCViewDialog {
 
                 QGCButton {
                     visible:    _allowDefaultReset
-                    text:       qsTr("Reset to default")
+                    text:       qsTr("Nilai Default")
 
                     onClicked: {
                         fact.value = fact.defaultValue
@@ -239,8 +239,8 @@ QGCViewDialog {
             QGCLabel {
                 width:      parent.width
                 wrapMode:   Text.WordWrap
-                text:       qsTr("Warning: Modifying values while vehicle is in flight can lead to vehicle instability and possible vehicle loss. ") +
-                            qsTr("Make sure you know what you are doing and double-check your values before Save!")
+                text:       qsTr("Peringatan: Memodifikasi nilai paremeter disaat drone sedang terbang dapat menyebabkan ketidakstabilan pada drone.") +
+                            qsTr("Pastikan anda tau apa yang anda lakukan, dan mengecek dua kali nilai yang anda masukan sebelum menyimpannya!")
                 visible:    fact.componentId != -1
             }
 

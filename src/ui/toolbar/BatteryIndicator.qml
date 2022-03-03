@@ -242,7 +242,14 @@ Item {
                                                    return false
                                                 }}
                                 QGCLabel { text: qsTr("Tersisa");                             visible: batteryValuesAvailable.timeRemainingAvailable }
-                                QGCLabel { text: qsTr("Tersisa") }
+                                QGCLabel { text: qsTr("Tersisa");
+                                           visible: {
+                                           if (object.id.rawValue === 0) {
+                                               return false}
+
+                                           else
+                                              return true
+                                           }}
                                 QGCLabel { text: qsTr("Voltase");
                                            visible: {
                                            if (object.id.rawValue === 0) {
@@ -282,7 +289,14 @@ Item {
                                                 return false
                                                  }}
                                 QGCLabel { text: object.timeRemainingStr.value;                                             visible: batteryValuesAvailable.timeRemainingAvailable }
-                                QGCLabel { text: object.percentRemaining.valueString + " " + object.percentRemaining.units }
+                                QGCLabel { text: object.percentRemaining.valueString + " " + object.percentRemaining.units;
+                                           visible: {
+                                            if (object.id.rawValue === 0) {
+                                                return false}
+
+                                            else
+                                               return true
+                                            } }
                                 QGCLabel { text: object.voltage.valueString + " " + object.voltage.units
                                     visible: {
                                     if (object.id.rawValue === 0) {
