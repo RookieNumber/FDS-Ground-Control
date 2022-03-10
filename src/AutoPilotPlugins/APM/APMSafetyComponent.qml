@@ -570,12 +570,12 @@ SetupPage {
 //                            source:             "/qmlimages/ReturnToHomeAltitude.svg"
 //                        }
 
-                        ColorOverlay {
-                            anchors.fill:   icon
-                            source:         icon
-                            color:          ggcPal.text
-                            visible:        _showIcon
-                        }
+//                        ColorOverlay {
+//                            anchors.fill:   icon
+//                            source:         icon
+//                            color:          ggcPal.text
+//                            visible:        _showIcon
+//                        }
 
                         QGCRadioButton {
                             id:                 returnAtCurrentRadio

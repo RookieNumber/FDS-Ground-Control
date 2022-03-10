@@ -291,7 +291,7 @@ SetupPage {
             spacing: _margins
 
             property real _margins:         ScreenTools.defaultFontPixelHeight / 2
-            property bool _showAdvanced:    sensorCombo.currentIndex === sensorModel.count - 1
+ //           property bool _showAdvanced:    sensorCombo.currentIndex === sensorModel.count - 1
             property real _fieldWidth:      ScreenTools.defaultFontPixelWidth * 25
 
             GridLayout {
@@ -335,7 +335,7 @@ SetupPage {
             spacing: _margins
 
             property real _margins:         ScreenTools.defaultFontPixelHeight / 2
-            property bool _showAdvanced:    sensorCombo.currentIndex === sensorModel.count - 1
+ //           property bool _showAdvanced:    sensorCombo.currentIndex === sensorModel.count - 1
             property real _fieldWidth:      ScreenTools.defaultFontPixelWidth * 25
 
 //            Component.onCompleted: calcSensor()
