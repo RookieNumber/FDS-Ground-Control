@@ -303,14 +303,14 @@ SetupPage {
                     Layout.row:     1
                     Layout.column:  0
                     text:           qsTr("Volume Tangki")
-                    visible: !_showAdvanced
+                    visible: true
                 }
 
                 FactTextField {
                     id:     armVoltField
                     width:  _fieldWidth
                     fact:   battCapacity
-                    visible:   !_showAdvanced
+                    visible:   true
                 }
 
                 QGCLabel {
@@ -321,7 +321,7 @@ SetupPage {
                    font.pointSize:     ScreenTools.smallFontPointSize
                    wrapMode:           Text.WordWrap
                    text:               qsTr("Dengan mengisi nilai Volume Tangki diatas maka nilai cairan yang terpakai akan dihitung dan ditampilkan di Jendela Penerbangan.")
-                   visible:            !_showAdvanced
+                   visible:            true
                }
             }
 
@@ -421,7 +421,7 @@ SetupPage {
                     Layout.row:     1
                     Layout.column:  0
                     text:           qsTr("Sprayer Pump Rate:")
-                    visible:   !_showAdvanced
+                    visible:   true
 
                 }
 
@@ -431,7 +431,7 @@ SetupPage {
                     id:     capacityField
                     width:  _fieldWidth
                     fact:   battCapacity
-                    visible:   !_showAdvanced
+                    visible:   true
                 }
 
 
@@ -445,7 +445,7 @@ SetupPage {
                     font.pointSize:     ScreenTools.smallFontPointSize
                     wrapMode:           Text.WordWrap
                     text:               qsTr("Bagian ini mengatur kecepatan aliran yang dihasilkan oleh pompa.")
-                    visible:            !_showAdvanced
+                    visible:            true
                 }
 
 
@@ -455,7 +455,7 @@ SetupPage {
                     Layout.row:     3
                     Layout.column:  0
                     text:           qsTr("Sprayer Pump Min:")
-                    visible:   !_showAdvanced
+                    visible:   true
 
                 }
 
@@ -463,7 +463,7 @@ SetupPage {
                     id:     armVoltField
                     width:  _fieldWidth
                     fact:   armVoltMin
-                    visible:   !_showAdvanced
+                    visible:   true
                 }
 
                 QGCLabel {
@@ -474,7 +474,7 @@ SetupPage {
                    font.pointSize:     ScreenTools.smallFontPointSize
                    wrapMode:           Text.WordWrap
                    text:               qsTr("Kecepatan aliran minimum yang akan dihasilkan oleh pompa.")
-                   visible:            !_showAdvanced
+                   visible:            true
                }
 
 //                QGCLabel {
