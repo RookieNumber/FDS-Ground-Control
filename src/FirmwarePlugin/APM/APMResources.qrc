@@ -32,6 +32,7 @@
         <file alias="QGroundControl/ArduPilot/APMSensorParams.qml">APMSensorParams.qml</file>
         <file alias="QGroundControl/ArduPilot/qmldir">QGroundControl.ArduPilot.qmldir</file>
         <file alias="APMSpeedComponent.qml">APMSpeedComponent.qml</file>
+        <file alias="APMSpeedComponentSummary.qml">APMSpeedComponentSummary.qml</file>
     </qresource>
     <qresource prefix="/json">
         <file alias="APM-MavCmdInfoCommon.json">APM-MavCmdInfoCommon.json</file>

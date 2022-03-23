@@ -8,7 +8,7 @@
 
 APMSpeedComponent::APMSpeedComponent(Vehicle* vehicle, AutoPilotPlugin* autopilot, QObject* parent)
     : VehicleComponent(vehicle, autopilot, parent)
-    , _name(tr("Keamanan"))
+    , _name(tr("Kontrol Kecepatan"))
 {
 }
 
@@ -21,7 +21,7 @@ QString APMSpeedComponent::description(void) const
 {
     switch (_vehicle->vehicleType()) {
     case MAV_TYPE_SUBMARINE:
-        return tr("Sistem keamanan berfungsi untuk mengatur sistem antisipasi kegagalan.");
+        return tr("Halaman ini menyediakan fungsi untuk mengontrol kecepatan pengoperasian pada drone.");
         break;
     case MAV_TYPE_GROUND_ROVER:
     case MAV_TYPE_FIXED_WING:
@@ -32,7 +32,7 @@ QString APMSpeedComponent::description(void) const
     case MAV_TYPE_OCTOROTOR:
     case MAV_TYPE_TRICOPTER:
     default:
-        return tr("Sistem keamanan berfungsi untuk mengatur antisipasi kegagalan pada.");
+        return tr("Halaman ini menyediakan fungsi untuk mengontrol kecepatan pengoperasian pada drone.");
         break;
     }
 }
