@@ -31,6 +31,7 @@
         <file alias="APMTuningComponentSub.qml">../../AutoPilotPlugins/APM/APMTuningComponentSub.qml</file>
         <file alias="QGroundControl/ArduPilot/APMSensorParams.qml">APMSensorParams.qml</file>
         <file alias="QGroundControl/ArduPilot/qmldir">QGroundControl.ArduPilot.qmldir</file>
+        <file alias="APMSpeedComponent.qml">APMSpeedComponent.qml</file>
     </qresource>
     <qresource prefix="/json">
         <file alias="APM-MavCmdInfoCommon.json">APM-MavCmdInfoCommon.json</file>
@@ -66,4 +67,5 @@
         <file alias="Plane.OfflineEditing.params">Plane3.9.OfflineEditing.params</file>
         <file alias="Rover.OfflineEditing.params">Rover3.5.OfflineEditing.params</file>
     </qresource>
+    <qresource prefix="/"/>
 </RCC>

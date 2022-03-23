@@ -19,6 +19,7 @@
 #include "APMFlightModesComponent.h"
 #include "APMRadioComponent.h"
 #include "APMSafetyComponent.h"
+#include "APMSpeedComponent.h"
 #include "APMTuningComponent.h"
 #include "APMSensorsComponent.h"
 #include "APMPowerComponent.h"
@@ -49,6 +50,7 @@ APMAutoPilotPlugin::APMAutoPilotPlugin(Vehicle* vehicle, QObject* parent)
     , _motorComponent           (nullptr)
     , _radioComponent           (nullptr)
     , _safetyComponent          (nullptr)
+    , _speedComponent           (nullptr)
     , _sensorsComponent         (nullptr)
     , _tuningComponent          (nullptr)
     , _esp8266Component         (nullptr)
@@ -109,7 +111,7 @@ const QVariantList& APMAutoPilotPlugin::vehicleComponents(void)
 
             _speedComponent = new APMSpeedComponent(_vehicle, this);
             _speedComponent->setupTriggerSignals();
-            _components.append(QVariant::fromValue((VehicleComponents*)_speedComponent));
+            _components.append(QVariant::fromValue((VehicleComponent*)_speedComponent));
 
 #if 0
     // Follow me not ready for Stable
