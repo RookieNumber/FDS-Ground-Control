@@ -48,7 +48,7 @@ QGCViewDialog {
                 columns:        2
 
                 QGCLabel {
-                    text: qsTr("Latitude")
+                    text: qsTr("Latitud")
                 }
                 FactTextField {
                     fact:               controller.latitude
@@ -56,7 +56,7 @@ QGCViewDialog {
                 }
 
                 QGCLabel {
-                    text: qsTr("Longitude")
+                    text: qsTr("Longitud")
                 }
                 FactTextField {
                     fact:               controller.longitude
@@ -64,7 +64,7 @@ QGCViewDialog {
                 }
 
                 QGCButton {
-                    text:               qsTr("Set Geographic")
+                    text:               qsTr("Set Geografis")
                     Layout.alignment:   Qt.AlignRight
                     Layout.columnSpan:  2
                     onClicked: {
@@ -76,7 +76,7 @@ QGCViewDialog {
                 Item { width: 1; height: ScreenTools.defaultFontPixelHeight; Layout.columnSpan: 2}
 
                 QGCLabel {
-                    text: qsTr("Zone")
+                    text: qsTr("Zona")
                 }
                 FactTextField {
                     fact:               controller.zone
@@ -84,7 +84,7 @@ QGCViewDialog {
                 }
 
                 QGCLabel {
-                    text: qsTr("Hemisphere")
+                    text: qsTr("Belahan Bumi")
                 }
                 FactComboBox {
                     fact:               controller.hemisphere
@@ -93,7 +93,7 @@ QGCViewDialog {
                 }
 
                 QGCLabel {
-                    text: qsTr("Easting")
+                    text: qsTr("Posisi Timur")
                 }
                 FactTextField {
                     fact:               controller.easting
@@ -101,7 +101,7 @@ QGCViewDialog {
                 }
 
                 QGCLabel {
-                    text: qsTr("Northing")
+                    text: qsTr("Posisi Utara")
                 }
                 FactTextField {
                     fact:               controller.northing

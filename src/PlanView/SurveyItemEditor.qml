@@ -57,6 +57,8 @@ TransectStyleComplexItemEditor {
                 updateValueWhileDragging: true
             }
 
+
+
 //            QGCLabel {
 //                text:       qsTr("Jarak Memutar")
 //                visible:    !forPresets

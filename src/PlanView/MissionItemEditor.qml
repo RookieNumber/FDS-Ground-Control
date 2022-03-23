@@ -203,7 +203,7 @@ Rectangle {
                 id: hamburgerMenu
 
                 QGCMenuItem {
-                    text:           qsTr("Move to vehicle position")
+                    text:           qsTr("Pindahkan ke Lokasi Drone")
                     visible:        missionItem.specifiesCoordinate
                     enabled:        _activeVehicle
                     onTriggered:    missionItem.coordinate = _activeVehicle.coordinate
@@ -212,15 +212,15 @@ Rectangle {
                 }
 
                 QGCMenuItem {
-                    text:           qsTr("Move to previous item position")
+                    text:           qsTr("Pindahkan ke Posisi Sebelumnya")
                     visible:        _missionController.previousCoordinate.isValid
                     onTriggered:    missionItem.coordinate = _missionController.previousCoordinate
                 }
 
                 QGCMenuItem {
-                    text:           qsTr("Edit position...")
+                    text:           qsTr("Edit Posisi...")
                     visible:        missionItem.specifiesCoordinate
-                    onTriggered:    mainWindow.showComponentDialog(editPositionDialog, qsTr("Edit Position"), mainWindow.showDialogDefaultWidth, StandardButton.Close)
+                    onTriggered:    mainWindow.showComponentDialog(editPositionDialog, qsTr("Edit Posisi"), mainWindow.showDialogDefaultWidth, StandardButton.Close)
                 }
 
                 QGCMenuSeparator {
@@ -228,7 +228,7 @@ Rectangle {
                 }
 
                 QGCMenuItem {
-                    text:       qsTr("Show all values")
+                    text:       qsTr("Tunjukan Semua Nilai")
                     checkable:  true
                     checked:    missionItem.isSimpleItem ? missionItem.rawEdit : false
                     visible:    missionItem.isSimpleItem && !_waypointsOnlyMode

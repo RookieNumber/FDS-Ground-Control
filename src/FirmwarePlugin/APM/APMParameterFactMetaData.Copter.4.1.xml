@@ -1849,7 +1849,7 @@
         <field name="UnitText">volt</field>
       </param>
       <param humanName="Battery capacity" name="BATT2_CAPACITY" documentation="Capacity of the battery in mAh when full" user="Standard">
-        <field name="Units">mAh</field>
+        <field name="Units">mL</field>
         <field name="UnitText">milliampere hour</field>
         <field name="Increment">50</field>
       </param>

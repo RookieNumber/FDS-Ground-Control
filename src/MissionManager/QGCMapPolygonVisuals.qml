@@ -264,15 +264,15 @@ Item {
         }
 
         QGCMenuItem {
-            text:           qsTr("Edit position..." )
+            text:           qsTr("Edit Posisi..." )
             visible:        _circleMode
-            onTriggered:    mainWindow.showComponentDialog(editCenterPositionDialog, qsTr("Edit Center Position"), mainWindow.showDialogDefaultWidth, StandardButton.Close)
+            onTriggered:    mainWindow.showComponentDialog(editCenterPositionDialog, qsTr("Edit Posisi Titik Utama"), mainWindow.showDialogDefaultWidth, StandardButton.Close)
         }
 
         QGCMenuItem {
-            text:           qsTr("Edit position..." )
+            text:           qsTr("Edit Posisi..." )
             visible:        !_circleMode && menu._editingVertexIndex >= 0
-            onTriggered:    mainWindow.showComponentDialog(editVertexPositionDialog, qsTr("Edit Vertex Position"), mainWindow.showDialogDefaultWidth, StandardButton.Close)
+            onTriggered:    mainWindow.showComponentDialog(editVertexPositionDialog, qsTr("Edit Posisi Titik"), mainWindow.showDialogDefaultWidth, StandardButton.Close)
         }
     }
 

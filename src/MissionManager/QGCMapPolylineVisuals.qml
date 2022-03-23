@@ -147,13 +147,13 @@ Item {
 
         QGCMenuItem {
             id:             removeVertexItem
-            text:           qsTr("Remove vertex" )
+            text:           qsTr("Hapus Titik" )
             onTriggered:    mapPolyline.removeVertex(menu._removeVertexIndex)
         }
 
         QGCMenuItem {
-            text:           qsTr("Edit position..." )
-            onTriggered:    mainWindow.showComponentDialog(editPositionDialog, qsTr("Edit Position"), mainWindow.showDialogDefaultWidth, StandardButton.Cancel)
+            text:           qsTr("Edit Posisi..." )
+            onTriggered:    mainWindow.showComponentDialog(editPositionDialog, qsTr("Edit Posisi"), mainWindow.showDialogDefaultWidth, StandardButton.Cancel)
         }
     }
 
