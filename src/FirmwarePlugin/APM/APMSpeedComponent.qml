@@ -77,27 +77,56 @@ SetupPage {
 
                     GridLayout {
                         id:             gridLayout
-                        columnSpacing:  _margins
-                        rowSpacing:     _margins
                         columns:        2
+                        rowSpacing:     _margins
+                        columnSpacing:  _margins
 
-
-                        QGCLabel { text: qsTr("Kecepatan Terbang pada Saat Misi:") }
-                        FactTextField {
-                            fact:               _waypointSpeed
-                            showUnits:          true
-                            Layout.fillWidth:   true
+                        QGCLabel {
+                            Layout.row:     1
+                            Layout.column:  0
+                            text:           qsTr("Kecepatan Terbang pada Saat Misi:")
+                            visible: true
                         }
 
-
-                        QGCLabel { text: qsTr("Kecepatan Terbang pada mode Loiter:") }
                         FactTextField {
-                            fact:               _loiterSpeed
-                            showUnits:          true
-                            Layout.fillWidth:   true
+
+                            fact:   _waypointSpeed
+                            visible:   true
+                            showUnits: true
                         }
 
+                        QGCLabel {
+                           Layout.columnSpan:  2
+                           Layout.fillWidth:  true
+                           font.pointSize:     ScreenTools.smallFontPointSize
+                           wrapMode:           Text.WordWrap
+                           text:               qsTr("Nilai kecepatan terbang drone saat melakukan terbang spraying secara otomatis.")
+                           visible:            true
+                       }
 
+
+                        QGCLabel {
+                            Layout.row:     3
+                            Layout.column:  0
+                            text:           qsTr("Kecepatan Terbang pada mode Loiter:")
+                            visible: true
+                        }
+
+                        FactTextField {
+
+                            fact:   _loiterSpeed
+                            visible:   true
+                            showUnits: true
+                        }
+
+                        QGCLabel {
+                           Layout.columnSpan:  2
+                           Layout.fillWidth:  true
+                           font.pointSize:     ScreenTools.smallFontPointSize
+                           wrapMode:           Text.WordWrap
+                           text:               qsTr("Nilai kecepatan terbang drone saat melakukan terbang kendali pilot.")
+                           visible:            true
+                       }
 
 
                     } // GridLayout
