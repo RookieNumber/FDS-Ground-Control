@@ -55,6 +55,8 @@ SetupPage {
             property Fact _failsafeBatt1CritVoltage:        controller.getParameterFact(-1, "BATT_CRT_VOLT", false /* reportMissing */)
             property Fact _failsafeBatt2CritVoltage:        controller.getParameterFact(-1, "BATT2_CRT_VOLT", false /* reportMissing */)
 
+
+
             property Fact _armingCheck: controller.getParameterFact(-1, "ARMING_CHECK")
 
             property real _margins:         ScreenTools.defaultFontPixelHeight
