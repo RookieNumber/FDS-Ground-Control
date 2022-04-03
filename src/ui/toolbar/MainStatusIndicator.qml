@@ -35,7 +35,7 @@ RowLayout {
         property string _commLostText:      qsTr("Komunikasi Terputus")
         property string _readyToFlyText:    qsTr("Ready To Fly")
         property string _notReadyToFlyText: qsTr("Not Ready")
-        property string _disconnectedText:  qsTr("Terputus")
+        property string _disconnectedText:  qsTr("Tidak ada koneksi")
         property string _armedText:         qsTr("Armed")
         property string _flyingText:        qsTr("Terbang...")
         property string _landingText:       qsTr("...Mendarat")
