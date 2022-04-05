@@ -54,8 +54,9 @@
         <file alias="XDelete.svg">resources/XDelete.svg</file>
         <file alias="XDeleteBlack.svg">resources/XDeleteBlack.svg</file>
         <file alias="waypoint.svg">resources/waypoint.svg</file>
-        <file>resources/icons/qgroundcontrol.ico</file>
         <file alias="FDSLogoFull.png">resources/FDSLogoFull.png</file>
+        <file alias="FDSLogo.ico">resources/icons/FDSLogo.ico</file>
+        <file alias="qgroundcontrol.ico">resources/icons/qgroundcontrol.ico</file>
     </qresource>
     <qresource prefix="/res/firmware">
         <file alias="3drradio.png">resources/firmware/3drradio.png</file>

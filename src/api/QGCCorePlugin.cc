@@ -493,8 +493,8 @@ QString QGCCorePlugin::firstRunPromptResource(int id)
     switch (id) {
     case unitsFirstRunPromptId:
         return "/FirstRunPromptDialogs/UnitsFirstRunPrompt.qml";
-    case offlineVehicleFirstRunPromptId:
-        return "/FirstRunPromptDialogs/OfflineVehicleFirstRunPrompt.qml";
+//    case offlineVehicleFirstRunPromptId:
+//        return "/FirstRunPromptDialogs/OfflineVehicleFirstRunPrompt.qml";
         break;
     }
 
