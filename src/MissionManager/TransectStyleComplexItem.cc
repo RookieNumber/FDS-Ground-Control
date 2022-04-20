@@ -1238,7 +1238,7 @@ void TransectStyleComplexItem::_buildAndAppendMissionItems(QList<MissionItem*>& 
 
     switch (_cameraCalc.distanceMode()) {
     case QGroundControlQmlGlobal::AltitudeModeRelative:
-        mavFrame = MAV_FRAME_GLOBAL_RELATIVE_ALT;
+        mavFrame = MAV_FRAME_GLOBAL_TERRAIN_ALT;
         break;
     case QGroundControlQmlGlobal::AltitudeModeAbsolute:
     case QGroundControlQmlGlobal::AltitudeModeCalcAboveTerrain:
@@ -1250,7 +1250,7 @@ void TransectStyleComplexItem::_buildAndAppendMissionItems(QList<MissionItem*>& 
     case QGroundControlQmlGlobal::AltitudeModeMixed:
     case QGroundControlQmlGlobal::AltitudeModeNone:
         qCWarning(TransectStyleComplexItemLog) << "Internal Error: _buildAndAppendMissionItems incorrect _cameraCalc.distanceMode" << _cameraCalc.distanceMode();
-        mavFrame = MAV_FRAME_GLOBAL_RELATIVE_ALT;
+        mavFrame = MAV_FRAME_GLOBAL_TERRAIN_ALT;
         break;
     }
 
