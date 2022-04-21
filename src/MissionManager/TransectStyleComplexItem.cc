@@ -1241,6 +1241,8 @@ void TransectStyleComplexItem::_buildAndAppendMissionItems(QList<MissionItem*>& 
         mavFrame = MAV_FRAME_GLOBAL_TERRAIN_ALT;
         break;
     case QGroundControlQmlGlobal::AltitudeModeAbsolute:
+        mavFrame = MAV_FRAME_GLOBAL_RELATIVE_ALT;
+        break;
     case QGroundControlQmlGlobal::AltitudeModeCalcAboveTerrain:
         mavFrame = MAV_FRAME_GLOBAL;
         break;

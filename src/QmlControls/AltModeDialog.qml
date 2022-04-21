@@ -44,13 +44,13 @@ QGCPopupDialog {
         id: buttonModel
 
         ListElement {
-            modeName:   qsTr("Relatif")
-            help:       qsTr("Menghitung ketinggian relatif terhadap lokasi take-off.")
+            modeName:   qsTr("Terrain")
+            help:       qsTr("Menghitung ketinggian berdasarkan data permukaan tanah. Ketinggian sebenarnya dihitung langsung oleh pesawat ketika terbang dengan mengambil data ketinggian dari peta maupun dari sensor ketinggian.")
             modeValue:  QGroundControl.AltitudeModeRelative
         }
         ListElement {
-            modeName:   qsTr("DPL")
-            help:       qsTr("Menghitung ketinggian relatif terhadap permukaan air laut.")
+            modeName:   qsTr("Relatif")
+            help:       qsTr("Menghitung ketinggian relatif terhadap permukaan take-off.")
             modeValue:  QGroundControl.AltitudeModeAbsolute
         }
 //        ListElement {
@@ -58,11 +58,11 @@ QGCPopupDialog {
 //            help:       qsTr("Menghitung ketinggian berdasarkan data permukaan tanah.")
 //            modeValue:  QGroundControl.AltitudeModeCalcAboveTerrain
 //        }
-        ListElement {
-            modeName:   qsTr("Terrain")
-            help:       qsTr("Menghitung ketinggian berdasarkan data permukaan tanah. Ketinggian sebenarnya dihitung langsung oleh pesawat ketika terbang dengan mengambil data ketinggian dari peta maupun dari sensor ketinggian.")
-            modeValue:  QGroundControl.AltitudeModeTerrainFrame
-        }
+//        ListElement {
+//            modeName:   qsTr("Terrain")
+//            help:       qsTr("Menghitung ketinggian berdasarkan data permukaan tanah. Ketinggian sebenarnya dihitung langsung oleh pesawat ketika terbang dengan mengambil data ketinggian dari peta maupun dari sensor ketinggian.")
+//            modeValue:  QGroundControl.AltitudeModeTerrainFrame
+//        }
         ListElement {
             modeName:   qsTr("Mixed Modes")
             help:       qsTr("The altitude mode can differ for each individual item.")

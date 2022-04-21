@@ -262,12 +262,12 @@ QString QGroundControlQmlGlobal::altitudeModeExtraUnits(AltMode altMode)
 {
     switch (altMode) {
     case AltitudeModeNone:
-        return QString();
+        return QString("(Terr)");
     case AltitudeModeRelative:
         // Showing (Rel) all the time ends up being too noisy
-        return QString();
+        return QString("(Terr)");
     case AltitudeModeAbsolute:
-        return tr("(AMSL)");
+        return tr("(Rel)");
     case AltitudeModeCalcAboveTerrain:
         return tr("(CalcT)");
     case AltitudeModeTerrainFrame:
